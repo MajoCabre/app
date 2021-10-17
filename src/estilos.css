@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    min-height: 100%;
+    background-color: #eaceb4;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.titulo {
+    margin: 0;
+    font-family: "Style Script", cursive;
+    font-weight: bold;
+    font-size: 40px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.titulo:hover {
+    color: #6a687a;
+    text-decoration: underline;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
