@@ -1,12 +1,13 @@
-import Header from "./Header"
+import NavBar from "./Components/NavBar";
+import Footer from "./Footer";
+import ItemListContainer from "./Components/ItemListContainer";
 
 const App = () => {
 	return (
 		<>
-		<Header/>
-		<footer>
-			<h1 className = "titulo">Contacto</h1>
-		</footer>
+		<NavBar/>
+		<ItemListContainer greeting="mundo"/>
+		<Footer/>
 		</>
 		)
 	}
