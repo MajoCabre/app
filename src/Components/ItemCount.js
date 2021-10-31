@@ -9,20 +9,14 @@ const ItemCount = () => {
         if (stock< 5){
             setContador(stock +1)
         }
-        else {
-            console.log("error")
-        }
     }
 
     const restaContador = () => {
 
         if(stock > 0){
             setContador(stock -1)
-        } else {
-            console.log("error")
-        }
+        } 
     }
-
 
     return (
         <>

@@ -6,6 +6,13 @@ body {
     min-height: 100%;
     background-color: #eaceb4;
 }
+.logo_nav{
+    display:flex;
+    justify-content:center;
+}
+.logo{
+    width: 600px;
+}
 .link {
     display: flex;
     flex-direction: row;
@@ -29,7 +36,7 @@ body {
     font-size: 50px;
     color: white;
 }
-.button{
+.button {
     background-color: transparent;
     border: 0px;
     display: flex;
@@ -42,6 +49,38 @@ body {
     color: #ffffff;
     display: flex;
     justify-content: center;
+}
+.parrafo-descripcion {
+    margin: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: coral;
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    border: solid white 2px;
+    width: 25%;
+    margin-top: 20px;
+} 
+.contenedor_listado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+    flex-wrap: wrap;
+}
+.imagen_tortas {
+    width: 300px;
+    margin: 10px;
+}
+.listado_texto{
+    color: #6a687a;
+    font-weight: bold;
+    font-size: 25px;    
 }
 footer {
     display: flex;

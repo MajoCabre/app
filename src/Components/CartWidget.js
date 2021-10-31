@@ -1,6 +1,8 @@
 const CartWidget = () => {
     return (
-        <span className="material-icons">favorite</span>
+        <nav className="logo_nav">
+            <img className="logo" src="logo.png"/>
+        </nav>
     )
 }
 
