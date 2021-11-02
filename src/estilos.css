@@ -80,7 +80,8 @@ body {
 .listado_texto{
     color: #6a687a;
     font-weight: bold;
-    font-size: 25px;    
+    font-size: 25px;   
+    margin: 10px; 
 }
 footer {
     display: flex;
