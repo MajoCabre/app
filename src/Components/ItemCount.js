@@ -34,11 +34,6 @@ const ItemCount = () => {
             <p className="button">{stock}</p>
         </nav>
 
-
-
-
-
-
         </>
     )
 }

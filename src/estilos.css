@@ -13,78 +13,43 @@ body {
 .logo{
     width: 600px;
 }
-.link {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-.titulo {
-    margin: 0;
-    font-family: "Style Script", cursive;
-    font-weight: bold;
-    font-size: 40px;
-    color: #ffffff;
-    text-decoration: none;
-}
-.titulo:hover {
-    color: #6a687a;
-    text-decoration: underline;
-}
-.material-icons {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    color: white;
-}
-.button {
-    background-color: transparent;
-    border: 0px;
-    display: flex;
-    justify-content: space-around;
-}
-.parrafo {
-    margin: 15px;
-    font-weight: bold;
-    font-size: 40px;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-}
-.parrafo-descripcion {
-    margin: 15px;
-    font-weight: bold;
-    font-size: 20px;
-    color: coral;
-}
-.contenedor{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0;
-    border: solid white 2px;
-    width: 25%;
-    margin-top: 20px;
-} 
-.contenedor_listado{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 5px;
-    flex-wrap: wrap;
-}
 .imagen_tortas {
     width: 300px;
     margin: 10px;
 }
-.listado_texto{
+.titulo_categoria {
+    margin: 0;
+    font-family: "Style Script", cursive;
+    font-size: 35px;
+    text-decoration: none;    
     color: #6a687a;
-    font-weight: bold;
-    font-size: 25px;   
-    margin: 10px; 
+}
+.titulo_categoria h1{
+    margin: 0;
+}
+.titulo_categoria:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.titulo_item{
+    color: coral;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    font-family: "Style Script", cursive;
+    font-size: 50px;
+    margin:15px;
+
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
 }
 footer {
     display: flex;
     justify-content: center;
-    margin-bottom: 0;
+    margin: 0;
+    font-family: "Style Script", cursive;
+    font-weight: bold;
+    color: #ffffff;
 }
