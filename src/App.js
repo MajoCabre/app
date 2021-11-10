@@ -1,12 +1,15 @@
 import NavBar from "./Components/NavBar";
 import Footer from "./Footer";
 import ItemListContainer from "./Components/ItemListContainer";
-import CategoryDetail from "./Components/category/CategoryDetail";
-import Cake from "./Components/cake/Cake";
+import ItemDetail from "./Components/category/ItemDetail";
+import Item from "./Components/cake/Item";
+import Cart from "./Components/Cart";
 
 import { BrowserRouter ,Switch, Route } from "react-router-dom";
 
 const App = () => {
+
+
 	return (
 		<BrowserRouter>
 		<div>
@@ -17,11 +20,15 @@ const App = () => {
 				</Route>
 
 				<Route exact path="/categorias/:categoriaId">
-					<CategoryDetail/>
+					<ItemDetail/>
 				</Route>
 
 				<Route exact path="/categorias/:categoriaId/item/:itemId">
-					<Cake/>
+					<Item/>
+				</Route>
+
+				<Route exact path="/cart">
+					<Cart/>
 				</Route>
 
 				<Route>

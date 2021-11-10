@@ -2,8 +2,10 @@ import React from 'react'
 import { useState } from "react";
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount";
 
-const CategoryDetail = () => {
+
+const ItemDetail = () => {
 
     const {categoriaId} = useParams();
 
@@ -28,28 +30,35 @@ const CategoryDetail = () => {
                 setDataMock(response)
         });
 
+        const onAdd = function (stock) {
+            // const agregarProducto = (stock)
+            console.log(`agregar:` + stock)
+    }
+
     return (
         <>
         <nav>
             <h1 className="titulo_item">{categoriaId}</h1>
             {dataMock
                 .map((item) => 
-                        {
-                        const redirect = `/categorias/${categoriaId}/item/${item.nombre}`;
-                            return (
-                                <nav className="contenedor">
-                                    <Link className="titulo_categoria" to ={redirect}>
-                                    <div key={item.nombre}>
-                                    <h1 >{item.nombre}</h1>
-                                    <img className="imagen_tortas" src={item.img} alt="tortas"/> 
-                                    </div>
-                                    </Link>
-                                </nav>)
-                        }
+                {
+                    const redirect = `/categorias/${categoriaId}/item/${item.nombre}`;
+                        return (
+                            <nav>
+                                <div className="contenedor" key={item.nombre}>
+                                <Link className="titulo_categoria" to ={redirect}>
+                                <h1 >{item.nombre}</h1>
+                                <img className="imagen_tortas" src={item.img} alt="tortas"/> 
+                                </Link>
+                                </div>
+                                <ItemCount onAdd={onAdd}/>
+
+                            </nav>)
+                    }
                 )}
-        </nav> 
+            </nav> 
         </>
     )
 }
 
-export default CategoryDetail;
+export default ItemDetail;

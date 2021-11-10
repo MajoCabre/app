@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 
-const ItemCategory = ({img, categoria}) => {
+const ItemDetailContainer = ({img, categoria}) => {
     const redirect = `/categorias/${categoria}`;
+
+    const estadoContador = (dataContador) => {
+        console.log(dataContador);
+    
+    }
 
     return  (
         <>
@@ -17,4 +22,4 @@ const ItemCategory = ({img, categoria}) => {
     )
 }
 
-export default ItemCategory;
+export default ItemDetailContainer;

@@ -8,7 +8,7 @@ const CartWidget = () => {
             <img className="logo" src="logo.png" alt="logo"/>
             </Link>
 
-            <Link to ="/car">
+            <Link to ="/cart">
             <img className="icono" src="carrito.png" alt="carrito"/>
             </Link>
         </nav>
