@@ -1,6 +1,7 @@
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
+		
 	return (
 		<header>
 			<CartWidget/>

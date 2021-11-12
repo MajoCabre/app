@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ItemDetail from "./category/ItemDetail";
+import Cart from "./Cart";
 
-const ItemCount = ({onAdd}) => {
+const ItemCount = ({item, onAdd}) => {
 
     const [stock, setContador] = useState(0)
 
@@ -20,10 +22,12 @@ const ItemCount = ({onAdd}) => {
     }
 
     const agregarCarrito = () => {
-        onAdd(stock)
+        let newItem = {...item};
+        newItem.stock = stock;
+        onAdd(newItem)
     }
 
-    const redirect = `/cart`;
+    const redirect = "/cart";
 
     return (
         <>

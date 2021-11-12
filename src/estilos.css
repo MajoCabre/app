@@ -36,9 +36,15 @@ body {
     display:flex;
     flex-direction: column;
     justify-content:center;
+    align-items: center;
     font-family: "Style Script", cursive;
     font-size: 50px;
     margin:15px;
+}
+.productos{
+    color: #6a687a;
+    font-weight: bold;
+    font-size: 25px;
 }
 .container{
     display: flex;
@@ -51,7 +57,7 @@ body {
     justify-content: center;
 }
 .button{
-    border-radius: 2px;
+    border-radius: 5px;
     border: 2px solid white;
     background-color: transparent;
     color: white;

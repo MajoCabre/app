@@ -1,18 +1,19 @@
+// import { createContext } from "react";
 import NavBar from "./Components/NavBar";
 import Footer from "./Footer";
 import ItemListContainer from "./Components/ItemListContainer";
 import ItemDetail from "./Components/category/ItemDetail";
 import Item from "./Components/cake/Item";
 import Cart from "./Components/Cart";
-
 import { BrowserRouter ,Switch, Route } from "react-router-dom";
+import { CustomProvider } from "./CartContext";
+
 
 const App = () => {
 
-
 	return (
 		<BrowserRouter>
-		<div>
+		<CustomProvider>
 		<NavBar/>
 			<Switch>
 				<Route exact path="/">
@@ -37,7 +38,7 @@ const App = () => {
 				
 			</Switch>
 			<Footer/>
-		</div>
+		</CustomProvider>
 	</BrowserRouter>)
 	}
 

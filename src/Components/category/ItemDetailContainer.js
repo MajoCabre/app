@@ -5,7 +5,6 @@ const ItemDetailContainer = ({img, categoria}) => {
 
     const estadoContador = (dataContador) => {
         console.log(dataContador);
-    
     }
 
     return  (

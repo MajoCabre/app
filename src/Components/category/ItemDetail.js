@@ -1,22 +1,22 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount";
-
+import { contexto } from "../../CartContext";
 
 const ItemDetail = () => {
-
+    
     const {categoriaId} = useParams();
+    const [dataMock, setDataMock] = useState([]);
+    const {agregarProducto} = useContext(contexto);
 
-        const [dataMock, setDataMock] = useState([]);
 
         const promise = new Promise((resolve)=>{
             let categoriaSeleccionada=[];
 
             const dataLocalStorage = localStorage.getItem('dataMock');
             const dataMock = JSON.parse(dataLocalStorage);
-
+            
             categoriaSeleccionada = dataMock.filter((element)=>element.categoria === categoriaId)[0];
     
             setTimeout(() => {
@@ -26,15 +26,15 @@ const ItemDetail = () => {
         });
     
         promise
-            .then((response)=>{
-                setDataMock(response)
+        .then((response)=>{
+            setDataMock(response)
         });
 
-        const onAdd = function (stock) {
-            // const agregarProducto = (stock)
-            console.log(`agregar:` + stock)
-    }
-
+        
+        const onAdd = (itemToAdd) =>{
+            agregarProducto(itemToAdd);
+        }
+        
     return (
         <>
         <nav>
@@ -44,16 +44,15 @@ const ItemDetail = () => {
                 {
                     const redirect = `/categorias/${categoriaId}/item/${item.nombre}`;
                         return (
-                            <nav>
-                                <div className="contenedor" key={item.nombre}>
-                                <Link className="titulo_categoria" to ={redirect}>
-                                <h1 >{item.nombre}</h1>
-                                <img className="imagen_tortas" src={item.img} alt="tortas"/> 
-                                </Link>
-                                </div>
-                                <ItemCount onAdd={onAdd}/>
-
-                            </nav>)
+                        <nav>
+                            <div className="contenedor" key={item.nombre}>
+                            <Link className="titulo_categoria" to ={redirect}>
+                            <h1 >{item.nombre}</h1>
+                            <img className="imagen_tortas" src={item.img} alt="tortas"/> 
+                            </Link>
+                            </div>
+                            <ItemCount item={item} onAdd={onAdd}/>
+                        </nav>)
                     }
                 )}
             </nav> 
