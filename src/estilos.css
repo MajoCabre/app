@@ -6,11 +6,11 @@ body {
     min-height: 100%;
     background-color: #eaceb4;
 }
-.logo_nav{
-    display:flex;
-    justify-content:center;
+.logo_nav {
+    display: flex;
+    justify-content: center;
 }
-.logo{
+.logo {
     width: 600px;
 }
 .imagen_tortas {
@@ -21,42 +21,42 @@ body {
     margin: 0;
     font-family: "Style Script", cursive;
     font-size: 35px;
-    text-decoration: none;    
+    text-decoration: none;
     color: #6a687a;
 }
-.titulo_categoria h1{
+.titulo_categoria h1 {
     margin: 0;
 }
 .titulo_categoria:hover {
     color: #ffffff;
     text-decoration: underline;
 }
-.titulo_item{
+.titulo_item {
     color: coral;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     font-family: "Style Script", cursive;
     font-size: 50px;
-    margin:15px;
+    margin: 15px;
 }
-.productos{
+.productos {
     color: #6a687a;
     font-weight: bold;
     font-size: 25px;
 }
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.contenedor{
+.contenedor {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.button{
+.button {
     border-radius: 5px;
     border: 2px solid white;
     background-color: transparent;
@@ -67,13 +67,27 @@ body {
     cursor: pointer;
     margin: 5px;
 }
-.parrafo_contador{
+.parrafo_contador {
     color: coral;
     font-size: 50px;
-    margin:15px;
+    margin: 15px;
     display: flex;
     justify-content: center;
 }
+
+.cart_widget {
+    position: relative;
+}
+.cart_widget_count {
+    position: absolute;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    padding: 5px;
+    top: 8px;
+    right: -16px;
+}
+
 footer {
     display: flex;
     justify-content: center;
