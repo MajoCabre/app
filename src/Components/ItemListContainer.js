@@ -18,7 +18,7 @@ const ItemListContainer = () => {
                 .forEach((doc) => {
                     response.push(doc.data());
                 });
-                console.log("Reponse: ", response);
+                
             setDataMock(response);
         } catch (e) {
             console.error("Error adding document: ", e);

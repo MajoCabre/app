@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getDatabase } from '../../firebase/index';
 import { doc, getDoc } from "firebase/firestore";
 
-const Item = ({ img, precio, categoria }) => {
+const Item = () => {
     const { itemId, categoriaId } = useParams();
     const [cake, setCake] = useState([]);
 
@@ -15,11 +15,9 @@ const Item = ({ img, precio, categoria }) => {
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data());
                 setCake(docSnap.data());
-            } else {
-                console.log("No se encontro el documento!");
-            }
+            } 
+            
         } catch (e) {
             console.error("Error: ", e);
         }

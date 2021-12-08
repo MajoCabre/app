@@ -22,7 +22,6 @@ const ItemDetail = () => {
                 .forEach((doc) => {
                     response.push({ ...doc.data(), id: doc.id });
                 });
-            console.log("Reponse: ", response);
             setDataMock(response);
         } catch (e) {
             console.error("Error: ", e);

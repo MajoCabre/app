@@ -1,5 +1,4 @@
 import { createContext , useState } from "react";
-
 export const contexto = createContext();
 export const { Provider } = contexto;
 

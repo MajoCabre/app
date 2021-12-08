@@ -1,4 +1,3 @@
-// import { createContext } from "react";
 import NavBar from "./Components/NavBar";
 import Footer from "./Footer";
 import ItemListContainer from "./Components/ItemListContainer";

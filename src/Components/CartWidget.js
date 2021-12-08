@@ -9,7 +9,6 @@ const CartWidget = () => {
 
     useEffect(() => {
         let total = 0;
-
         cartList.forEach(element => {
             total = total + element.stock;
         });

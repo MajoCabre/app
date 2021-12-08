@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 const ItemDetailContainer = ({img, categoria}) => {
     const redirect = `/categorias/${categoria}`;
 
-    const estadoContador = (dataContador) => {
-        console.log(dataContador);
-    }
-
     return  (
         <>
         <nav className="contenedor">

@@ -1,7 +1,6 @@
 import * as firebase from "firebase/app";
 import * as firestore from "firebase/firestore"; 
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyCPRHZoRNuFL_6R_HRx49d_pZU8rRE6YBQ",
     authDomain: "coderhouse-react-a76a6.firebaseapp.com",
