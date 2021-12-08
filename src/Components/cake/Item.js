@@ -1,37 +1,38 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { getDatabase } from '../../firebase/index';
+import { doc, getDoc } from "firebase/firestore";
 
-const Item = ({img, precio, categoria}) => {
-    const {itemId, categoriaId} = useParams();
+const Item = ({ img, precio, categoria }) => {
+    const { itemId, categoriaId } = useParams();
+    const [cake, setCake] = useState([]);
 
-        const [cake, setCake] = useState([]);
+    useEffect(async () => {
+        try {
+            const baseDatos = getDatabase();
+            const docRef = doc(baseDatos, `/categorias/${categoriaId}/items`, itemId);
+            const docSnap = await getDoc(docRef);
 
-        const promise = new Promise((resolve)=>{
-            let response=[];
+            if (docSnap.exists()) {
+                console.log("Document data:", docSnap.data());
+                setCake(docSnap.data());
+            } else {
+                console.log("No se encontro el documento!");
+            }
+        } catch (e) {
+            console.error("Error: ", e);
+        }
 
-            const dataLocalStorage = localStorage.getItem('dataMock');
-            const dataMock = JSON.parse(dataLocalStorage);
+    }, [])
 
-            const data= dataMock.filter((element)=>element.categoria === categoriaId)[0];
-            const cake = data.items.filter((element)=>element.nombre === itemId)[0];
-            
-            setTimeout(() => {
-                resolve(cake);
-                });
-            });
-    
-        promise
-            .then((response)=>{
-                setCake(response)
-        });
-
-    return  (
+    return (
         <>
-            <nav className = "container">
+            <nav className="container">
                 <h1 className="titulo_item">{cake.nombre} {cake.precio}</h1>
-                {/* <h1 className="titulo_item">{cake.precio}</h1>  */}
-                <img className="imagen_tortas" src={`../../${cake.img}`} alt="tortas"/>
+                <div>
+                <img className="imagen_tortas" src={`../../../${cake.img}`} alt="tortasddd"/> 
+                </div>
             </nav>
         </>
     )

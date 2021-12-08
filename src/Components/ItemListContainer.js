@@ -1,56 +1,33 @@
 import CategoryList from "./category/CategoryList";
-import {useState} from "react";
+import { useState, useEffect } from "react";
+import { getDatabase } from '../firebase/index';
+import { collection, getDocs } from "firebase/firestore";
+
 
 const ItemListContainer = () => {
 
     const [dataMock, setDataMock] = useState([]);
 
-    const promise = new Promise((resolve)=>{
+    useEffect(async () => {
+        try {
+            const baseDatos = getDatabase();
+            const querySnapshot = await getDocs(collection(baseDatos, "categorias"));
+            const response = [];
 
-        const response = [
-            {
-                categoria: 'frutales',
-                img:'redvelvet.jpg',
-                items:[
-                    {id:1, nombre:"Naranja cake", precio:"800", img:"../redvelvet.jpg"},
-                    {id:2, nombre:"Banana Cake", precio:"600", img:"../banana.jpg"},
-                    {id:3, nombre:"Carrot Cake", precio:"700", img:"../carrot.jpg"}
-                ]
-            },
-            {
-                categoria: 'cremosas',
-                img:'redvelvet.jpg',
-                items:[
-                    {id:4, nombre:"Red Velvet", precio:"800", img:"../redvelvet.jpg"},
-                    {id:5, nombre:"Tiramisu Cake", precio:"600", img:"../banana.jpg"},
-                    {id:6, nombre:"Cheese Cake", precio:"700", img:"../carrot.jpg"}
-                ]
-            },
-            {
-                categoria: 'humedas',
-                img:'redvelvet.jpg',
-                items:[
-                    {id:7, nombre:"Tres leches", precio:"800", img:"../redvelvet.jpg"},
-                    {id:8, nombre:"Bienmesabe Cake", precio:"600", img:"../banana.jpg"},
-                    {id:9, nombre:"Superhumeda Cake", precio:"700", img:"../carrot.jpg"}
-                ]
-            }
-        ];
+            querySnapshot
+                .forEach((doc) => {
+                    response.push(doc.data());
+                });
+                console.log("Reponse: ", response);
+            setDataMock(response);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
 
-        setTimeout(() => {
-            resolve(response);
-            localStorage.setItem('dataMock', JSON.stringify(response));
-        }, 
-        1000);
-    });
-
-    promise
-        .then((response)=>{
-            setDataMock(response)
-    })
+    }, [])
 
     return (
-        <CategoryList data = {dataMock}/>
+        <CategoryList data={dataMock} />
     )
 }
 

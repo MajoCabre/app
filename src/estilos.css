@@ -88,6 +88,26 @@ body {
     right: -16px;
 }
 
+.user_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 20px;
+}
+
+.user_form label {
+    margin: 5px;
+}
+
+.user_form label input {
+    margin-left: 10px;
+    border-radius: 6px;
+}
+
+.confirm_button  {
+    margin-top: 20px;
+}
+
 footer {
     display: flex;
     justify-content: center;

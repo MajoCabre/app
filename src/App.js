@@ -34,7 +34,7 @@ const App = () => {
 
 				<Route>
 					<div>No se ha encontrado!</div>
-				</Route> */}
+				</Route>
 				
 			</Switch>
 			<Footer/>
